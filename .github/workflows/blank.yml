@@ -30,6 +30,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: start job
         run: echo "start sync blog code"
+      
       - name: rsync deployments
       	uses: burnett01/rsync-deployments@5.2.1
       	with:
