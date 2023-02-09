@@ -34,5 +34,5 @@ jobs:
         env:
            BLOG_HOST: ${{ secrets.IP_ADDRESS_OF_BLOGHOST }}
         run: |
-          ping %BLOG_HOST%,
-          tennet  %BLOG_HOST% 22
+          ping $BLOG_HOST,
+          tennet  BLOG_HOST 22
