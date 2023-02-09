@@ -31,6 +31,8 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
+        env:
+           BLOG_HOST: ${{ secrets.IP_ADDRESS_OF_BLOGHOST }}
         run: |
-          ping ${{ secrets.IP_ADDRESS_OF_BLOGHOST }},
-          tennet ${{ secrets.IP_ADDRESS_OF_BLOGHOST }} 22
+          ping "%BLOG_HOST%",
+          tennet  "%BLOG_HOST%" 22
