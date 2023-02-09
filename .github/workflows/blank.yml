@@ -37,7 +37,7 @@ jobs:
           switches: -avzh
           path: blogs/
           remote_path: /var/www/html/
-          remote_host: ${{ secret.IP_ADDRESS_OF_BLOGHOST }}
+          remote_host: ${{ secrets.IP_ADDRESS_OF_BLOGHOST }}
           remote_port: 22
           remote_user: root
-          remote_key: ${{ secret.BLOG_DEPLOY_KEY }}
+          remote_key: ${{ secrets.BLOG_DEPLOY_KEY }}
