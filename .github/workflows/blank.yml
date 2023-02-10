@@ -1,4 +1,4 @@
-# This is a basic workflow to help you get started with Actions
+#e This is a basic workflow to help you get started with Actions
 
 name: 推送blog到vps
 
@@ -7,13 +7,8 @@ on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -27,17 +22,17 @@ jobs:
       #list all files 
       - name: list all files
         run: ls -al
-      # Runs a single command using the runners shell
+      # notice start job
       - name: start job
         run: echo "start sync blog code"
-      
+      # sync blog to vps
       - name: rsync deployments
         uses: burnett01/rsync-deployments@4.1
         with:
           switches: -avzh
           path: blogs/
-          remote_path: /data/md/
+          remote_path: ${{ secrets.REMOTE_PATH_OF_BLOG }}
           remote_host: ${{ secrets.IP_ADDRESS_OF_BLOGHOST }}
-          remote_port: 22
-          remote_user: root
-          remote_key: ${{ secrets.BLOG_DEPLOY_KEY }}
+          remote_port: ${{ secrets.PORT_OF_BLOGHOST }}
+          remote_user: ${{ secrets.USER_OF_BLOGHOST }}
+          remote_key:  ${{ secrets.BLOG_DEPLOY_KEY }}
