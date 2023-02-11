@@ -7,3 +7,4 @@ restart sshd
 bind ip
 start rsync service
 open port
+retry
