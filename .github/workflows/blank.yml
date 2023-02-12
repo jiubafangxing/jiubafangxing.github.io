@@ -55,5 +55,5 @@ jobs:
           key: ${{ secrets.DOMESTIC_BLOG_DEPLOY_KEY }}
           port: ${{ secrets.SSHPORT }}
           script: |
-            whoami
+            cd ${{ secrets.BOLG_ROOT_PATH }}
             ls -al
