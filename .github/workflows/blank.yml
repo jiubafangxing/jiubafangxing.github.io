@@ -47,3 +47,13 @@ jobs:
           remote_port: ${{ secrets.PORT_OF_BLOGHOST }}
           remote_user: ${{ secrets.USER_OF_DOMESTIC_BLOGHOST }}
           remote_key:  ${{ secrets.DOMESTIC_BLOG_DEPLOY_KEY }}
+      - name: multiple command
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.IP_ADDRESS_OF_DOMESTIC_BLOG_HOST }}
+          username: ${{ secrets.USER_OF_DOMESTIC_BLOGHOST }}
+          key: ${{ secrets.DOMESTIC_BLOG_DEPLOY_KEY }}
+          port: ${{ secrets.SSHPORT }}
+          script: |
+            whoami
+            ls -al
