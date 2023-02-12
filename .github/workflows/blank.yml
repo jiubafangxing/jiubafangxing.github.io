@@ -26,16 +26,16 @@ jobs:
       - name: start job
         run: echo "start sync blog code"
       # sync blog to vps
-      - name: rsync deployments
-        uses: burnett01/rsync-deployments@4.1
-        with:
-          switches: -avzh
-          path: blogs/
-          remote_path: ${{ secrets.REMOTE_PATH_OF_BLOG }}
-          remote_host: ${{ secrets.IP_ADDRESS_OF_BLOGHOST }}
-          remote_port: ${{ secrets.PORT_OF_BLOGHOST }}
-          remote_user: ${{ secrets.USER_OF_BLOGHOST }}
-          remote_key:  ${{ secrets.BLOG_DEPLOY_KEY }}
+#       - name: rsync deployments
+#         uses: burnett01/rsync-deployments@4.1
+#         with:
+#           switches: -avzh
+#           path: blogs/
+#           remote_path: ${{ secrets.REMOTE_PATH_OF_BLOG }}
+#           remote_host: ${{ secrets.IP_ADDRESS_OF_BLOGHOST }}
+#           remote_port: ${{ secrets.PORT_OF_BLOGHOST }}
+#           remote_user: ${{ secrets.USER_OF_BLOGHOST }}
+#           remote_key:  ${{ secrets.BLOG_DEPLOY_KEY }}
       # sync blog to domestic vps
       - name: 同步博客到腾讯云vps
         uses: burnett01/rsync-deployments@4.1
