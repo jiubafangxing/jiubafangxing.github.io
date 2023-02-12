@@ -56,4 +56,4 @@ jobs:
           port: ${{ secrets.SSHPORT }}
           script: |
             cd ${{ secrets.BOLG_ROOT_PATH }}
-            ls -al
+            hugo
