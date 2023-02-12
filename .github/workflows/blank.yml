@@ -40,7 +40,7 @@ jobs:
       - name: 同步博客到腾讯云vps
         uses: burnett01/rsync-deployments@4.1
         with:
-          switches: -avzh
+          switches: -avzh  --delete
           path: blogs/
           remote_path: ${{ secrets.REMOTE_PATH_OF_DOMESTC_BLOG }}
           remote_host: ${{ secrets.IP_ADDRESS_OF_DOMESTIC_BLOG_HOST }}
