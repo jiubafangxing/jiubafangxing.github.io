@@ -2,4 +2,5 @@ baseURL = "http://jiubafangxing.github.io/"
 languageCode = "zh-cn"
 title = "jiubafangxing"
 Paginate = 5
-[params] featured_image = “/images/SolvayPhysiq1927.png”
+[params] 
+featured_image = '/images/SolvayPhysiq1927.png'
